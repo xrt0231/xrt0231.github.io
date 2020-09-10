@@ -1,0 +1,60 @@
+body{
+    margin: 0px;
+}
+.head{
+    background-color: #8899aa;
+    display: flex; /* 並排 */
+    justify-content: center; /*水平對齊*/
+}
+
+.left{
+    width: 600px;
+    font-size: 36px; font-weight: bold;
+    color: white;
+    padding: 10px 0px;
+}
+.right{
+    width: 400px;
+    display: flex;
+    align-items: center; /* 垂直排列 */
+}
+.col{
+    margin: 0px 5px;
+}
+input{
+    width: 120px;
+}   
+
+.main{
+    background-color: #cccccc;
+    display: flex; 
+    justify-content: center;
+}
+.left_main{
+    width: 600px;
+    font-size: 20px; font-weight: bold;
+    color:navy;
+    padding: 50px 0px;
+}
+.right_main{
+    width: 400px;
+    padding: 25px;
+}
+.input_box{
+    border: lightgrey;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 22px;
+}
+.right_main_right{
+    display: flex;
+    justify-content: center;
+}
+.right_mian_right_left{
+    width: 50%;
+}
+.right_main_right_right{
+    width: 50%;
+}
