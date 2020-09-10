@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drag Drop</title>
+    <style>
+    .box{
+        width: 100px;height: 100px;background-color: blue     ;
+        position:absolute;left: 0px;top:0px;  /*控制box絕對定位 利用滑鼠座標指定*/  
+    }
+    </style>
+</head>
+<body>
+    <div id="box" class="box"></div>
+    <script>
+        let box=document.getElementById("box");
+        let move=function(e){
+            //console.log(e.clientX, e.clientY);
+            box.style.left=(e.clientX-20)+"px";
+            box.style.top=(e.clientY-20)+"px";
+        }
+        let drag=function(){
+            //要讓 box 跟著滑鼠動
+            document.addEventListener("mousemove",move);
+        };
+        let drop=function(){                               
+            document.removeEventListener("mousemove",move);
+        }
+        box.addEventListener("mousedown",drag);
+        box.addEventListener("mouseup",drop);
+    </script>
+
+</body>
+</html>
