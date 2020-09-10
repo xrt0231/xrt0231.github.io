@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Drag Drop</title>
-    <style>
-    .box{
-        width: 100px;height: 100px;background-color: blue     ;
-        position:absolute;left: 0px;top:0px;  /*控制box絕對定位 利用滑鼠座標指定*/  
-    }
-    </style>
+    <title>Document</title>
 </head>
 <body>
-    <div id="box" class="box"></div>
     <script>
-        let box=document.getElementById("box");
-        let move=function(e){
-            //console.log(e.clientX, e.clientY);
-            box.style.left=(e.clientX-20)+"px";
-            box.style.top=(e.clientY-20)+"px";
+    function countAandB() {
+        var a;
+        let alpha_beta=parseInt(prompt("1. # of Alphabet you wanna input?",""));
+        let alphabet_counter=new Array(alpha_beta);
+        for(let i=0;i<alphabet_counter.length;i++){
+            // dynamic indexing
+            alphabet_counter[i]=(prompt("Insert alphabet",""));
         }
-        let drag=function(){
-            //要讓 box 跟著滑鼠動
-            document.addEventListener("mousemove",move);
-        };
-        let drop=function(){                               
-            document.removeEventListener("mousemove",move);
+        num_a = alphabet_counter.filter(x=> x==='a').length;
+        num_b = alphabet_counter.filter(x=> x==='b').length;
+        return (num_a+num_b);
         }
-        box.addEventListener("mousedown",drag);
-        box.addEventListener("mouseup",drop);
-    </script>
 
+    function toNumber() {
+        var dict = {'a': 1, 'b':2, 'c': 3, 'd': 4, 'e': 5};
+        let alpha_beta=parseInt(prompt("2. # of lphbet you wanna input?",""));
+        let alphabet_to_num=new Array(alpha_beta);
+        
+        for(let i=0;i<alphabet_to_num.length;i++){
+            // dynamic indexing
+            alphabet_to_num[i]=(prompt("Insert alphabet for to number",""));
+        }
+        var j;
+        let alphabet_to_num_arr=new Array();
+        for(let j=0;j<alphabet_to_num.length;j++) {
+            //conver a, b, c, d, e to 1, 2, 3, 4, 5)
+            alphabet_to_num_arr[j]=dict[alphabet_to_num[j]];
+        }
+        return alphabet_to_num_arr;
+        }
+    
+    console.log(countAandB())
+    console.log(toNumber());
+    </script>
 </body>
 </html>
